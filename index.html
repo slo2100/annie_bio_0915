@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Stardust to Seedlings — AP Bio Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-deep:#0C1B22;
+  --navy:#12262F;
+  --navy-soft:#1B3A48;
+  --panel:#F6F0DE;
+  --panel-alt:#EEE4C8;
+  --ink:#1E2B24;
+  --ink-soft:#4C5A52;
+  --shell-text:#DCE6E0;
+  --shell-dim:#93A8A0;
+  --amber:#E0913F;
+  --amber-deep:#C97530;
+  --teal:#4FAFA0;
+  --teal-deep:#377F74;
+  --rose:#C4696B;
+  --sage:#7FA363;
+  --rust:#B4553F;
+  --line:#D8CCA6;
+  --shadow:0 10px 24px rgba(8,18,20,.35);
+  --radius-card:10px;
+  --radius-pill:999px;
+  --radius-tag:6px;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--navy);
+  background-image:radial-gradient(circle at 10% -10%, var(--navy-soft), var(--navy) 55%);
+  color:var(--shell-text);
+  font-family:'Inter',system-ui,sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;color:var(--shell-text);margin:0 0 .4em;letter-spacing:-.01em;}
+.ink h1,.ink h2,.ink h3,.ink h4{color:var(--ink);}
+p{margin:0 0 1em;}
+.ink p, .ink li{color:var(--ink-soft);}
+a{color:var(--amber);}
+button{font-family:inherit;cursor:pointer;}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+/* ===== Layout ===== */
+.topbar{
+  position:sticky;top:0;z-index:40;
+  background:rgba(12,27,34,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(220,230,224,.12);
+  padding:14px 20px 0;
+}
+.topbar-inner{max-width:1080px;margin:0 auto;}
+.brand{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+.brand h1{font-size:1.3rem;margin:0;}
+.brand span{font-size:.8rem;color:var(--shell-dim);font-style:italic;}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin;}
+nav.tabs::-webkit-scrollbar{height:5px;}
+nav.tabs::-webkit-scrollbar-thumb{background:var(--navy-soft);border-radius:99px;}
+nav.tabs button{
+  flex:0 0 auto;
+  background:transparent;border:1px solid transparent;
+  color:var(--shell-dim);
+  padding:8px 14px;border-radius:var(--radius-pill);
+  font-size:.86rem;font-weight:600;white-space:nowrap;
+  transition:background .2s,color .2s,border-color .2s;
+}
+nav.tabs button:hover{color:var(--shell-text);border-color:rgba(220,230,224,.2);}
+nav.tabs button.active{background:var(--amber);color:var(--navy-deep);border-color:var(--amber);}
+
+main{max-width:1080px;margin:0 auto;padding:28px 20px 80px;}
+.panel{display:none;}
+.panel.active{display:block;animation:fadeIn .35s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+.kicker{font-family:'Fraunces',serif;font-style:italic;color:var(--amber);font-size:.95rem;margin-bottom:.3em;}
+.section-head{margin-bottom:22px;}
+.section-head h2{font-size:1.9rem;}
+.section-head .lead{color:var(--shell-dim);max-width:62ch;font-size:1.02rem;}
+
+/* ===== Notes / callouts ===== */
+.note{
+  background:var(--navy-soft);
+  border:1px solid rgba(220,230,224,.14);
+  border-left:3px solid var(--teal);
+  border-radius:var(--radius-tag);
+  padding:14px 16px;margin:18px 0;
+  font-size:.94rem;color:var(--shell-text);
+}
+.note strong{color:var(--amber);}
+.note--heads-up{border-left-color:var(--amber);}
+
+/* ===== Cards on parchment ===== */
+.paper{
+  background:var(--panel);
+  color:var(--ink);
+  border-radius:var(--radius-card);
+  box-shadow:var(--shadow);
+  padding:22px 24px;
+  margin:18px 0;
+}
+.paper h3{font-size:1.2rem;margin-bottom:.5em;}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0;}
+.card{
+  background:var(--panel);color:var(--ink);
+  border-radius:var(--radius-card);
+  padding:16px 18px;box-shadow:var(--shadow);
+}
+.card h4{font-size:1.02rem;margin-bottom:.35em;color:var(--ink);}
+.card p{color:var(--ink-soft);font-size:.92rem;margin:0;}
+.tag{
+  display:inline-block;font-size:.72rem;font-weight:700;
+  padding:2px 9px;border-radius:var(--radius-pill);
+  background:var(--panel-alt);color:var(--teal-deep);
+  margin-bottom:8px;
+}
+.tag.amber{color:var(--amber-deep);}
+.tag.rose{color:var(--rose);}
+.tag.sage{color:#5a7a45;}
+
+/* ===== buttons ===== */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--amber);color:var(--navy-deep);
+  border:none;padding:10px 18px;border-radius:var(--radius-pill);
+  font-weight:700;font-size:.9rem;
+  transition:background .2s, transform .1s;
+}
+.btn:hover{background:var(--amber-deep);}
+.btn:active{transform:scale(.97);}
+.btn.secondary{background:transparent;color:var(--shell-text);border:1px solid rgba(220,230,224,.3);}
+.btn.secondary:hover{border-color:var(--teal);color:var(--teal);}
+.btn.ink{background:var(--ink);color:var(--panel);}
+
+/* ===== Timeline (overview) ===== */
+.timeline-wrap{margin-top:26px;}
+.timeline-track{position:relative;display:flex;justify-content:space-between;gap:4px;overflow-x:auto;padding:10px 4px 20px;}
+.timeline-line{position:absolute;left:24px;right:24px;top:34px;height:3px;background:rgba(220,230,224,.18);border-radius:3px;z-index:0;}
+.timeline-progress{position:absolute;left:24px;top:34px;height:3px;background:var(--amber);border-radius:3px;z-index:1;transition:width .5s ease;}
+.stage{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;flex:0 0 auto;width:104px;background:none;border:none;color:var(--shell-dim);}
+.stage .dot{
+  width:26px;height:26px;border-radius:50%;
+  background:var(--navy-soft);border:2px solid rgba(220,230,224,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:700;color:var(--shell-text);
+  transition:all .25s;
+}
+.stage span.label{font-size:.72rem;text-align:center;line-height:1.25;}
+.stage.active .dot{background:var(--amber);border-color:var(--amber);color:var(--navy-deep);transform:scale(1.15);}
+.stage.active span.label{color:var(--amber);font-weight:700;}
+.timeline-detail{margin-top:8px;}
+.era-pill{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 11px;border-radius:99px;background:var(--panel-alt);color:var(--teal-deep);margin-bottom:10px;}
+
+/* ===== Flower diagram ===== */
+.diagram-row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+.diagram-box{flex:1 1 320px;min-width:280px;}
+.info-box{flex:1 1 260px;min-width:240px;}
+svg.diagram{width:100%;height:auto;display:block;}
+.hotspot{fill:rgba(224,145,63,.18);stroke:var(--amber);stroke-width:2;cursor:pointer;transition:fill .2s;animation:pulse 2.4s ease-in-out infinite;}
+.hotspot:hover{fill:rgba(224,145,63,.4);}
+.hotspot.active{fill:var(--amber);}
+@keyframes pulse{0%,100%{stroke-opacity:.5;}50%{stroke-opacity:1;}}
+.pollen-tube{fill:none;stroke:var(--amber);stroke-width:2.5;stroke-dasharray:6 5;}
+.pollen-tube.drawn{stroke-dasharray:none;}
+.diagram-label{font-size:11px;fill:var(--shell-dim);font-family:'Inter',sans-serif;}
+
+/* ===== Meiosis widget ===== */
+.meiosis-widget{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:14px;}
+.meiosis-cell{position:relative;width:220px;height:120px;flex:0 0 auto;cursor:pointer;}
+.meiosis-cell .whole{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:96px;height:96px;border-radius:50%;background:var(--panel-alt);
+  border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.85rem;color:var(--ink);
+  transition:opacity .5s;
+}
+.meiosis-cell .daughter{
+  position:absolute;top:50%;width:66px;height:66px;border-radius:50%;
+  background:var(--panel);border:2px solid var(--teal-deep);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.78rem;color:var(--teal-deep);
+  opacity:0;transition:all .7s cubic-bezier(.34,1.56,.64,1);
+}
+.meiosis-cell .daughter.left{left:18%;transform:translate(-50%,-50%) scale(.5);}
+.meiosis-cell .daughter.right{left:82%;transform:translate(-50%,-50%) scale(.5);}
+.meiosis-cell.split .whole{opacity:0;}
+.meiosis-cell.split .daughter{opacity:1;transform:translate(-50%,-50%) scale(1);}
+.meiosis-hint{font-size:.78rem;color:var(--shell-dim);font-style:italic;}
+
+/* ===== Miller-Urey flow ===== */
+.flow-chart{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap;margin-top:16px;}
+.flow-step{
+  background:var(--panel);color:var(--ink);border-radius:var(--radius-card);
+  padding:14px 16px;flex:1 1 180px;box-shadow:var(--shadow);position:relative;
+}
+.flow-step .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:24px;height:24px;border-radius:50%;background:var(--amber);color:var(--navy-deep);
+  font-weight:700;font-size:.78rem;margin-bottom:8px;
+}
+.flow-step h4{font-size:.92rem;margin-bottom:.3em;}
+.flow-step p{font-size:.84rem;color:var(--ink-soft);margin:0;}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--shell-dim);font-size:1.3rem;flex:0 0 auto;padding:0 2px;}
+
+/* ===== Chemiosmosis diagram ===== */
+.chem-wrap{margin-top:16px;}
+.chemiosmosis-diagram .membrane{fill:var(--navy-soft);stroke:var(--teal);stroke-width:1.5;}
+.chemiosmosis-diagram .turbine{transform-box:fill-box;transform-origin:center;fill:var(--amber);}
+.chemiosmosis-diagram.running .turbine{animation:spin 2.6s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.chemiosmosis-diagram .proton{fill:var(--rose);opacity:0;}
+.chemiosmosis-diagram.running .proton{animation:flowAcross 2.1s linear infinite;}
+.chemiosmosis-diagram .proton:nth-child(1){animation-delay:0s;}
+.chemiosmosis-diagram .proton:nth-child(2){animation-delay:.4s;}
+.chemiosmosis-diagram .proton:nth-child(3){animation-delay:.8s;}
+.chemiosmosis-diagram .proton:nth-child(4){animation-delay:1.2s;}
+.chemiosmosis-diagram .proton:nth-child(5){animation-delay:1.6s;}
+@keyframes flowAcross{
+  0%{opacity:0;transform:translateX(0);}
+  8%{opacity:1;}
+  85%{opacity:1;}
+  100%{opacity:0;transform:translateX(150px);}
+}
+.chem-caption{font-size:.85rem;color:var(--shell-dim);margin-top:10px;}
+
+/* ===== Cell diagrams + table ===== */
+.cell-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px;}
+.cell-card{background:var(--panel);color:var(--ink);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:16px;}
+.cell-card h4{font-size:1rem;margin-bottom:6px;}
+.cell-card ul{margin:8px 0 0;padding-left:18px;font-size:.84rem;color:var(--ink-soft);}
+table.compare{width:100%;border-collapse:collapse;margin-top:10px;font-size:.86rem;}
+table.compare th,table.compare td{border:1px solid var(--line);padding:8px 10px;text-align:center;}
+table.compare th{background:var(--panel-alt);color:var(--ink);font-family:'Fraunces',serif;font-weight:600;}
+table.compare td:first-child,table.compare th:first-child{text-align:left;}
+table.compare .yes{color:#3f7a2f;font-weight:700;}
+table.compare .no{color:var(--ink-soft);opacity:.45;}
+
+/* ===== Population / evolution diagram ===== */
+.pop-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;}
+.pop-panel{background:var(--panel);color:var(--ink);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:14px;flex:1 1 200px;}
+.pop-panel h4{font-size:.86rem;margin-bottom:6px;}
+.pop-dots{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin:8px 0;}
+.pop-dots span{width:14px;height:14px;border-radius:50%;display:block;}
+.pop-panel p{font-size:.78rem;color:var(--ink-soft);margin:0;}
+.pop-arrow{flex:0 0 auto;color:var(--shell-dim);font-size:1.4rem;}
+
+/* ===== Convergent evolution tree ===== */
+.tree-wrap svg{width:100%;height:auto;}
+.tree-branch{stroke:rgba(220,230,224,.4);stroke-width:2;fill:none;}
+.tree-node{fill:var(--panel);stroke:var(--teal);stroke-width:2;}
+.tree-label{font-size:11.5px;fill:var(--shell-text);font-family:'Inter',sans-serif;}
+.tree-sub{font-size:9.5px;fill:var(--shell-dim);font-family:'Inter',sans-serif;}
+
+/* ===== Science method flow ===== */
+.sci-flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:18px 0;}
+.sci-step{background:var(--panel-alt);color:var(--ink);border-radius:99px;padding:10px 18px;font-weight:700;font-size:.86rem;flex:0 0 auto;}
+.sci-arrow{color:var(--shell-dim);font-size:1.2rem;}
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:16px;}
+.proof-card{background:var(--panel);color:var(--ink);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:16px;text-align:left;}
+.proof-num{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--amber-deep);font-weight:700;}
+
+/* ===== Flashcards ===== */
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;}
+.filter-row button{
+  background:transparent;border:1px solid rgba(220,230,224,.3);color:var(--shell-dim);
+  padding:7px 14px;border-radius:99px;font-size:.82rem;font-weight:600;transition:.2s;
+}
+.filter-row button.active{background:var(--teal);border-color:var(--teal);color:var(--navy-deep);}
+.flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.flashcard{perspective:1100px;height:150px;}
+.flashcard-inner{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.4,.1,.2,1);transform-style:preserve-3d;cursor:pointer;}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg);}
+.flash-face{
+  position:absolute;inset:0;border-radius:8px;padding:16px;
+  display:flex;flex-direction:column;justify-content:center;
+  backface-visibility:hidden;box-shadow:var(--shadow);
+}
+.flash-front{background:var(--panel);color:var(--ink);}
+.flash-front .hint{font-size:.7rem;color:var(--ink-soft);margin-top:8px;font-style:italic;}
+.flash-back{background:var(--teal-deep);color:#F2FBF8;transform:rotateY(180deg);font-size:.86rem;}
+.flash-face h4{font-size:1.02rem;margin:0 0 4px;}
+
+/* ===== Quiz ===== */
+.quiz-shell{max-width:640px;}
+.quiz-progress{font-size:.82rem;color:var(--shell-dim);margin-bottom:10px;}
+.quiz-q{font-size:1.15rem;margin-bottom:16px;}
+.quiz-options{display:flex;flex-direction:column;gap:10px;}
+.quiz-opt{
+  text-align:left;background:var(--panel);color:var(--ink);border:2px solid transparent;
+  border-radius:var(--radius-card);padding:12px 16px;font-size:.94rem;transition:.15s;
+}
+.quiz-opt:hover:not(:disabled){border-color:var(--teal);}
+.quiz-opt.correct{background:#DEEAD1;border-color:var(--sage);}
+.quiz-opt.incorrect{background:#F1D9D4;border-color:var(--rust);}
+.quiz-opt:disabled{cursor:default;}
+.quiz-explain{margin-top:16px;padding:14px 16px;border-radius:var(--radius-card);background:var(--navy-soft);font-size:.9rem;display:none;}
+.quiz-explain.show{display:block;}
+.quiz-footer{display:flex;justify-content:space-between;align-items:center;margin-top:20px;}
+.quiz-score{font-size:.88rem;color:var(--shell-dim);}
+.quiz-result h3{font-size:1.6rem;}
+.quiz-result .big{font-family:'Fraunces',serif;font-size:3rem;color:var(--amber);}
+
+footer{max-width:1080px;margin:0 auto;padding:20px 20px 50px;color:var(--shell-dim);font-size:.8rem;text-align:center;}
+
+@media (max-width:640px){
+  .brand h1{font-size:1.08rem;}
+  .section-head h2{font-size:1.5rem;}
+  .diagram-row{flex-direction:column;}
+  .meiosis-widget{justify-content:center;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <h1>From Stardust to Seedlings</h1>
+      <span>AP Biology review — origin of life, evolution, cells &amp; plant reproduction</span>
+    </div>
+    <nav class="tabs" id="tabNav">
+      <button data-tab="overview" class="active">Overview</button>
+      <button data-tab="origin">Origin of Life</button>
+      <button data-tab="plants">Plant Reproduction</button>
+      <button data-tab="cells">Cells</button>
+      <button data-tab="evolution">Evolution</button>
+      <button data-tab="science">Case Study</button>
+      <button data-tab="flashcards">Flashcards</button>
+      <button data-tab="quiz">Quiz</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= OVERVIEW ================= -->
+<section id="overview" class="panel active">
+  <div class="section-head">
+    <p class="kicker">Unit overview</p>
+    <h2>The same chemistry that built stars eventually built a flower</h2>
+    <p class="lead">Every atom in your body was forged in a star. This unit traces the whole path: from raw elements, to self-replicating molecules, to the first cell, to the flowers you're identifying tomorrow. Tap a stage below to walk through it.</p>
+  </div>
+
+  <div class="note note--heads-up"><strong>Heads up —</strong> your notes flag "identifying parts of the flower" as test material. If you're short on time, jump to the <strong>Plant Reproduction</strong> tab first, then come back here for the bigger picture.</div>
+
+  <div class="timeline-wrap">
+    <div class="timeline-track" id="timelineTrack">
+      <div class="timeline-line"></div>
+      <div class="timeline-progress" id="timelineProgress"></div>
+    </div>
+    <div class="paper timeline-detail">
+      <span class="era-pill" id="timelineEra">Chemical evolution</span>
+      <h3 id="timelineTitle">Big Bang &amp; stars</h3>
+      <p id="timelineText">Loading…</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ORIGIN OF LIFE ================= -->
+<section id="origin" class="panel">
+  <div class="section-head">
+    <p class="kicker">Chemical evolution → organic evolution</p>
+    <h2>Origin of life</h2>
+    <p class="lead">Two eras, back to back: <strong>chemical evolution</strong> (non-living chemistry slowly building life-like structures) and <strong>organic evolution</strong> (living things evolving by natural selection, once FLO and LUCA existed).</p>
+  </div>
+
+  <div class="paper">
+    <h3>An idea that was ruled out first</h3>
+    <p><strong>Spontaneous generation / vitalism</strong> — the old belief that life springs from non-living matter through a mysterious "life force" (vitalism). Louis Pasteur disproved it with his swan-necked flask experiment: broth boiled in a flask with an open, curved neck stayed sterile indefinitely, even though it was still exposed to air — because the curve trapped microbes before they could reach the broth. Break the neck (or tip the flask so broth touches the trapped debris) and decay starts immediately. <strong>Conclusion: biogenesis</strong> — life only comes from existing life. That still leaves the real question open: where did the very first living thing come from?</p>
+  </div>
+
+  <div class="paper">
+    <h3>Where did the organic molecules come from? Three hypotheses</h3>
+    <p>These aren't competing answers — evidence suggests all three could have contributed.</p>
+    <div class="card-grid">
+      <div class="card">
+        <span class="tag amber">Primordial soup</span>
+        <h4>Miller–Urey experiment (1953)</h4>
+        <p>Simulated early Earth's <em>reducing atmosphere</em> (no free O₂: H₂, CH₄, NH₃, water vapor) with electric sparks standing in for lightning. Result: simple organics like formaldehyde and hydrogen cyanide, which can polymerize into amino acids and nucleic-acid bases. Repeating the experiment with other early-atmosphere gas mixtures gives similar results.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Extraterrestrial delivery</span>
+        <h4>Meteorites &amp; asteroids</h4>
+        <p>The 1969 Murchison meteorite carried amino acids, lipids, sugars, and uracil. NASA's Bennu asteroid sample (analyzed 2024–25) contained over 16,000 kinds of organic molecules, including amino acids and all four DNA/RNA nucleobases. Space may have rained down life's raw ingredients.</p>
+      </div>
+      <div class="card">
+        <span class="tag rose">Hydrothermal vents</span>
+        <h4>"Most likely scenario," per your notes</h4>
+        <p>At mid-ocean tectonic-plate boundaries, cold seawater seeps into cracks, is warmed and mineral-enriched by the mantle, and rises back up — concentrating chemicals exactly where catalytic minerals are sitting.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <h3>Hydrothermal vents up close</h3>
+    <div class="card-grid">
+      <div class="card">
+        <span class="tag rose">Black smokers</span>
+        <p>Extremely hot (≈350–700°C) and acidic, rich in iron, nickel, and sulfide minerals. Larger pH and temperature gradients; more biodiversity clusters around them today.</p>
+      </div>
+      <div class="card">
+        <span class="tag">White smokers</span>
+        <p>Cooler (≈100–150°C) and more alkaline. Walls made of calcium carbonate (CaCO₃) with Fe/Ni/Cu ions as possible catalysts. Riddled with microscopic pores — sheltered, semi-permeable pockets where proton gradients could build up and organic molecules could concentrate.</p>
+      </div>
+    </div>
+    <p>Both types share the ingredients biologists think life needed: a source of chemical energy, mineral catalysts, and a way to isolate and concentrate molecules — the same jobs a cell membrane does today.</p>
+  </div>
+
+  <div class="paper chem-wrap">
+    <h3>The shared mechanism: chemiosmosis</h3>
+    <p>Peter Mitchell's proton-motive-force hypothesis (Nobel Prize, 1978): protons (H⁺) build up on one side of a membrane, creating stored potential energy. Letting them flow back through a channel — ATP synthase — drives ATP production. Every mitochondrion still runs on this today, and hydrothermal-vent micropores may have run on it before any cell existed.</p>
+    <svg class="diagram chemiosmosis-diagram" id="chemDiagram" viewBox="0 0 400 190">
+      <rect x="0" y="20" width="400" height="150" fill="none"/>
+      <rect class="membrane" x="185" y="20" width="30" height="150" rx="4"/>
+      <polygon class="turbine" points="200,75 210,90 200,105 190,90" />
+      <circle class="turbine" cx="200" cy="90" r="4" fill="var(--navy-deep)"/>
+      <text x="40" y="35" class="diagram-label">outside — high H⁺</text>
+      <text x="230" y="35" class="diagram-label">inside — low H⁺</text>
+      <text x="230" y="150" class="diagram-label">ADP + P → ATP</text>
+      <circle class="proton" cx="50" cy="60" r="6"/>
+      <circle class="proton" cx="50" cy="90" r="6"/>
+      <circle class="proton" cx="50" cy="120" r="6"/>
+      <circle class="proton" cx="50" cy="45" r="6"/>
+      <circle class="proton" cx="50" cy="140" r="6"/>
+      <text x="35" y="64" font-size="9" fill="var(--panel)">H⁺</text>
+    </svg>
+    <button class="btn" id="chemToggle">▶ Show proton flow</button>
+    <p class="chem-caption">Click to animate protons flowing through the membrane pore, spinning ATP synthase, and releasing energy that builds ATP.</p>
+  </div>
+
+  <div class="paper">
+    <h3>Protobionts: "before life," made in the lab</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Coacervates</h4>
+        <p>Droplets of protein + carbohydrate that cluster together through hydrophobic interactions. In lab experiments they could even carry out a simple enzyme reaction (turning starch into maltose).</p>
+      </div>
+      <div class="card">
+        <h4>Microspheres</h4>
+        <p>Made from proteinoids — artificially created proteins — forming tiny (~2 μm) spherical structures.</p>
+      </div>
+      <div class="card">
+        <h4>Liposomes</h4>
+        <p>Made of amphipathic fatty acids: a polar, hydrophilic carboxyl head and a nonpolar, hydrophobic methyl tail. These spontaneously arrange into a bilayer membrane — isolating and protecting an interior, concentrating molecules, and preventing pH swings that would stop reactions.</p>
+      </div>
+    </div>
+    <p>None of these are alive — they have some characteristics of life (a boundary, some chemistry inside) but not all of them (no reliable self-replication, no heritable code).</p>
+  </div>
+
+  <div class="paper">
+    <h3>The Miller–Urey apparatus</h3>
+    <div class="flow-chart">
+      <div class="flow-step"><span class="num">1</span><h4>Heated "sea" flask</h4><p>Water is heated, producing water vapor — standing in for the primeval ocean.</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="num">2</span><h4>"Atmosphere" chamber</h4><p>A mix of H₂, CH₄, NH₃, and water vapor — Miller's best guess at early Earth's reducing atmosphere.</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="num">3</span><h4>Spark discharge</h4><p>Electrodes fire sparks to mimic lightning, providing the energy for reactions.</p></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="num">4</span><h4>Condenser &amp; sampling</h4><p>Cooled "rain" carries new organic molecules back into the sea flask, where samples were collected and analyzed.</p></div>
+    </div>
+    <p style="margin-top:14px;">Result: simple organics (formaldehyde, hydrogen cyanide) and, in follow-up runs, amino acids and nucleic-acid bases — built entirely from inorganic starting material.</p>
+  </div>
+
+  <div class="paper">
+    <h3>The RNA World hypothesis</h3>
+    <p>NASA defines life as <em>"a self-sustained chemical system capable of undergoing Darwinian evolution."</em> Break that down, and RNA fits surprisingly well:</p>
+    <div class="card-grid">
+      <div class="card"><span class="tag">i</span><h4>Chemical system</h4><p>Controlled by catalytic molecules that carry out metabolism. RNA can act as a <strong>ribozyme</strong> — an RNA enzyme (the ribosome itself is one) — catalyzing reactions and helping build macromolecules.</p></div>
+      <div class="card"><span class="tag">ii</span><h4>Self-sustained</h4><p>The same molecules ("code") must be copied and passed on each generation. RNA can <strong>self-replicate</strong> — lab experiments show short RNA fragments forming spontaneously and then copying themselves.</p></div>
+      <div class="card"><span class="tag">iii</span><h4>Darwinian evolution</h4><p>Molecules must be able to mutate — and a more efficient mutated form should become more common over time. In vitro experiments (10¹⁵ RNA variants, repeated selection + amplification cycles) show exactly this: the most efficient catalytic RNA sequences came to dominate the population — <strong>chemical selection</strong>.</p></div>
+    </div>
+    <p>So why did life switch to DNA? DNA is a more stable, double-stranded molecule. Modern eukaryotic cells still carry the enzyme <strong>reverse transcriptase</strong>, which converts RNA into DNA — and molecules like ATP, NAD, FAD, and coenzyme A are all RNA-based, thought to be molecular "relics" of an earlier RNA world.</p>
+  </div>
+
+  <div class="paper">
+    <h3>FLO → LUCA</h3>
+    <div class="card-grid">
+      <div class="card">
+        <span class="tag amber">FLO</span>
+        <h4>First Living Organism</h4>
+        <p>Possibly RNA-based (a ribozyme that could replicate and evolve). Had an energy molecule and a membrane. Might have been a <strong>chemoautotroph</strong> — living at a hydrothermal vent, oxidizing H₂S to build a proton gradient (PMF) and make ATP via chemosynthesis, the same basic strategy chemosynthetic bacteria use today.</p>
+      </div>
+      <div class="card">
+        <span class="tag">LUCA</span>
+        <h4>Last Universal Common Ancestor</h4>
+        <p>DNA-based. Had a phospholipid bilayer membrane, used ATP, and stored its genome in DNA — the same three traits every living cell on Earth still shares. LUCA's descendants split into bacteria, archaea (both prokaryotes), and eukaryotes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <h3>Real-world evidence: chemosynthesis at vents today</h3>
+    <p>In 1977, the submersible <em>Alvin</em> discovered thriving ecosystems at deep-sea hydrothermal vents — including giant tube worms (<em>Riftia pachyptila</em>). Tube worms have no mouth, gut, or anus. Instead, an internal organ called the <strong>trophosome</strong> houses trillions of chemosynthetic sulfur bacteria. The worm's blood (using hemoglobin) ferries H₂S, O₂, and CO₂ to the bacteria, which oxidize H₂S for energy and fix CO₂ into organic molecules the worm can use. It's a living example of chemosynthesis supporting an entire food web — and a working model for how FLO might have made a living.</p>
+  </div>
+</section>
+
+<!-- ================= PLANT REPRODUCTION ================= -->
+<section id="plants" class="panel">
+  <div class="section-head">
+    <p class="kicker">Flower anatomy &amp; meiosis</p>
+    <h2>Plant reproduction</h2>
+    <p class="lead">Flowers are the eukaryote lineage's answer to reproduction: a hermaphroditic structure with both male and female parts, built around meiosis and fertilization.</p>
+  </div>
+
+  <div class="paper">
+    <h3>Label the flower</h3>
+    <p>Click a highlighted circle on the diagram to review that part.</p>
+    <div class="diagram-row">
+      <div class="diagram-box">
+        <svg class="diagram" id="flowerSvg" viewBox="0 0 480 400">
+          <line x1="150" y1="370" x2="150" y2="150" stroke="var(--shell-dim)" stroke-width="3"/>
+          <ellipse cx="150" cy="112" rx="36" ry="26" fill="var(--panel-alt)" stroke="var(--shell-dim)" stroke-width="2"/>
+          <circle cx="150" cy="112" r="6" fill="var(--amber)"/>
+          <path d="M300,66 C286,150 312,230 300,300" fill="none" stroke="var(--shell-dim)" stroke-width="3"/>
+          <circle cx="300" cy="58" r="11" fill="var(--panel-alt)" stroke="var(--shell-dim)" stroke-width="2"/>
+          <ellipse cx="300" cy="330" rx="42" ry="38" fill="var(--panel-alt)" stroke="var(--shell-dim)" stroke-width="2"/>
+          <circle cx="300" cy="330" r="8" fill="var(--rose)"/>
+          <path class="pollen-tube" id="pollenTube" d="M300,58 C288,150 312,230 300,330"/>
+          <line x1="150" y1="370" x2="300" y2="368" stroke="var(--shell-dim)" stroke-width="3"/>
+
+          <circle class="hotspot" data-part="anther" cx="150" cy="112" r="20"/>
+          <circle class="hotspot" data-part="filament" cx="150" cy="250" r="16"/>
+          <circle class="hotspot" data-part="stigma" cx="300" cy="58" r="16"/>
+          <circle class="hotspot" data-part="style" cx="300" cy="180" r="16"/>
+          <circle class="hotspot" data-part="ovary" cx="300" cy="330" r="20"/>
+
+          <text x="80" y="96" class="diagram-label">anther</text>
+          <text x="72" y="254" class="diagram-label">filament</text>
+          <text x="322" y="52" class="diagram-label">stigma</text>
+          <text x="322" y="184" class="diagram-label">style</text>
+          <text x="322" y="336" class="diagram-label">ovary + ovule</text>
+          <text x="90" y="30" class="diagram-label" font-style="italic">stamen (♂)</text>
+          <text x="330" y="30" class="diagram-label" font-style="italic">pistil (♀)</text>
+        </svg>
+        <button class="btn secondary" id="traceBtn" style="margin-top:10px;">▶ Trace the pollen tube</button>
+      </div>
+      <div class="info-box paper" id="flowerInfoBox">
+        <span class="tag amber" id="flowerInfoTag">Stamen — male part</span>
+        <h3 id="flowerInfoTitle">Anther</h3>
+        <p id="flowerInfoText">Produces pollen. Pollen contains the microspore (2n), which undergoes meiosis to become sperm (n). Click any circle on the diagram to switch.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <h3>From pollen to seed</h3>
+    <p>Pollen lands on the stigma → special proteins let compatible pollen germinate and grow a pollen tube down the style → the tube reaches the ovary and delivers sperm (n) to the egg (n) inside the ovule → <strong>fertilized egg / zygote (2n)</strong> → mitosis (2n → 2n) → growth and development → <strong>seed</strong>.</p>
+  </div>
+
+  <div class="paper">
+    <h3>Meiosis: the reduction division</h3>
+    <p><strong>Meiosis</strong> is a reduction division that produces cells with half the normal number of chromosomes. Human example: a body cell has 2 × 23 = 46 total chromosomes (23 kinds, 2 copies of each — one paternal set, one maternal set). Meiosis produces sperm or egg cells with just 23 chromosomes — one of each kind.</p>
+    <div class="meiosis-widget">
+      <div class="meiosis-cell" id="meiosisCell">
+        <div class="whole">2n = 46</div>
+        <div class="daughter left">n = 23</div>
+        <div class="daughter right">n = 23</div>
+      </div>
+      <p class="meiosis-hint">Click the cell to watch meiosis halve the chromosome number.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <h3>Hermaphroditic flowers</h3>
+    <p>Most flowers have <strong>both</strong> reproductive organs (stamen and pistil) in the same structure. That raises two questions worth knowing for the test: can a flower fertilize itself, and if so, what structural or timing adaptations do flowers use to control whether self-pollination or cross-pollination happens?</p>
+  </div>
+</section>
+
+<!-- ================= CELLS ================= -->
+<section id="cells" class="panel">
+  <div class="section-head">
+    <p class="kicker">Prokaryotic &amp; eukaryotic cells</p>
+    <h2>Cell structure</h2>
+    <p class="lead">Word roots do a lot of work here: <em>pro</em> = before, <em>karyon</em> = nucleus, <em>eu</em> = true. A prokaryote exists "before a nucleus"; a eukaryote has a "true" nucleus.</p>
+  </div>
+
+  <div class="note">Think of it like an efficiency apartment versus a mansion. A prokaryote is a one-room apartment — everything happens in the same open space. A eukaryote is a mansion — membrane-bound organelles give each job (energy, digestion, packaging) its own room, so processes don't interfere or compete with each other.</div>
+
+  <div class="cell-grid">
+    <div class="cell-card">
+      <h4>Prokaryotic cell (bacteria)</h4>
+      <svg class="diagram" viewBox="0 0 200 120">
+        <rect x="20" y="30" width="160" height="60" rx="30" fill="var(--panel-alt)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M55,60 q10,-14 20,0 q10,14 20,0 q10,-14 20,0" stroke="var(--teal-deep)" stroke-width="2" fill="none"/>
+        <circle cx="70" cy="45" r="2.4" fill="var(--rose)"/><circle cx="90" cy="75" r="2.4" fill="var(--rose)"/>
+        <circle cx="120" cy="48" r="2.4" fill="var(--rose)"/><circle cx="140" cy="70" r="2.4" fill="var(--rose)"/>
+        <circle cx="105" cy="60" r="2.4" fill="var(--rose)"/>
+        <line x1="180" y1="60" x2="198" y2="60" stroke="var(--ink)" stroke-width="2"/>
+      </svg>
+      <ul>
+        <li>Three shapes: <em>coccus</em> (round), <em>bacillus</em> (rod, e.g. E. coli), <em>spirillum</em> (spiral)</li>
+        <li>Free-floating DNA — not enclosed in a membrane</li>
+        <li>Cell wall, cell membrane, cytoplasm</li>
+        <li>Small dots = ribosomes (protein synthesis)</li>
+        <li>Some have a flagellum for propulsion — those without one are non-motile</li>
+      </ul>
+    </div>
+    <div class="cell-card">
+      <h4>Animal cell (eukaryote)</h4>
+      <svg class="diagram" viewBox="0 0 200 140">
+        <circle cx="100" cy="70" r="60" fill="var(--panel-alt)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="85" cy="60" r="20" fill="var(--panel)" stroke="var(--teal-deep)" stroke-width="2"/>
+        <circle cx="85" cy="60" r="6" fill="var(--teal-deep)"/>
+        <ellipse cx="130" cy="90" rx="10" ry="6" fill="var(--rose)" opacity=".7"/>
+        <ellipse cx="120" cy="45" rx="9" ry="5" fill="var(--rose)" opacity=".7"/>
+        <circle cx="65" cy="95" r="4" fill="var(--amber)"/>
+      </svg>
+      <ul>
+        <li>Membrane-bound nucleus (DNA + nucleolus)</li>
+        <li>Mitochondria, ER, Golgi, lysosomes, vesicles</li>
+        <li>No cell wall, no chloroplast</li>
+        <li>Small or temporary vacuoles</li>
+      </ul>
+    </div>
+    <div class="cell-card">
+      <h4>Plant cell (eukaryote)</h4>
+      <svg class="diagram" viewBox="0 0 200 140">
+        <rect x="30" y="15" width="140" height="110" rx="10" fill="var(--panel-alt)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="80" cy="50" r="18" fill="var(--panel)" stroke="var(--teal-deep)" stroke-width="2"/>
+        <circle cx="80" cy="50" r="5" fill="var(--teal-deep)"/>
+        <ellipse cx="120" cy="40" rx="8" ry="12" fill="#4f8f4a" opacity=".8"/>
+        <ellipse cx="135" cy="60" rx="8" ry="12" fill="#4f8f4a" opacity=".8"/>
+        <rect x="55" y="80" width="90" height="35" rx="8" fill="#cfe3ea" opacity=".8" stroke="var(--teal-deep)" stroke-width="1"/>
+        <text x="60" y="101" font-size="9" fill="var(--teal-deep)">vacuole</text>
+      </svg>
+      <ul>
+        <li>Everything an animal cell has, <strong>plus</strong>:</li>
+        <li>Cell wall (made of cellulose)</li>
+        <li>Chloroplasts (photosynthesis)</li>
+        <li>One large, permanent central vacuole</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="paper">
+    <h3>Structure comparison chart</h3>
+    <table class="compare">
+      <tr><th>Structure</th><th>Bacterial</th><th>Animal</th><th>Plant</th><th>All cells</th></tr>
+      <tr><td>Cell membrane</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Ribosome</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Cytoplasm</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>DNA</td><td class="no">—</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Mitochondria</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td></tr>
+      <tr><td>Nucleolus</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td></tr>
+      <tr><td>Nucleus</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td></tr>
+      <tr><td>Cell wall</td><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="no">—</td></tr>
+      <tr><td>Prokaryotic</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr>
+      <tr><td>Eukaryotic</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">—</td></tr>
+    </table>
+  </div>
+
+  <div class="paper">
+    <h3>Structure follows function</h3>
+    <div class="card-grid">
+      <div class="card"><h4>Root hair cell</h4><p>Many thin projections increase surface area for absorbing water and nutrients from soil.</p></div>
+      <div class="card"><h4>Muscle cell</h4><p>Bundled into smaller contractile units (myofibrils), allowing the cell to contract.</p></div>
+      <div class="card"><h4>Nerve cell</h4><p>Many branching connection points let it pass messages to lots of other cells.</p></div>
+      <div class="card"><h4>Sperm cell</h4><p>Small mass and a tail for transport; surface proteins help it identify (and be identified by) the right egg.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVOLUTION ================= -->
+<section id="evolution" class="panel">
+  <div class="section-head">
+    <p class="kicker">Natural selection &amp; convergent evolution</p>
+    <h2>Evolution</h2>
+    <p class="lead">Evolution is a change in a population's traits over time. It happens at the <strong>population</strong> level — never to a single organism during its own lifetime.</p>
+  </div>
+
+  <div class="paper">
+    <h3>How natural selection works</h3>
+    <p>Selection acts on traits that are controlled by genes — traits that can be passed on. When conditions change, individuals whose traits happen to work better in the new conditions survive and reproduce more (differential reproduction). Their traits become more common in the next generation.</p>
+    <div class="pop-flow" id="popFlow"></div>
+    <p style="margin-top:12px;">Change is also restricted: in the short term by weather, and in the long term by whether the environment can support the population at all — if conditions get too extreme, extinction is possible.</p>
+  </div>
+
+  <div class="paper">
+    <h3>Where variation comes from</h3>
+    <p><strong>Mutation</strong> — a random change in DNA — is the ultimate source of genetic variation. A mutation that happens during ordinary cell division isn't passed to offspring. Only a mutation in a sex cell (sperm or egg) can be inherited and matter for evolution.</p>
+  </div>
+
+  <div class="paper tree-wrap">
+    <h3>Convergent evolution: carnivorous plants</h3>
+    <p><strong>Convergent evolution</strong>: unrelated species independently evolve similar traits because they face similar environmental pressures — not because they share a recent common ancestor. Several separate plant lineages, all under the same stress (nutrient-poor soil — low nitrogen and phosphorus), independently evolved carnivory.</p>
+    <svg viewBox="0 0 460 220">
+      <path class="tree-branch" d="M230,30 L120,110"/>
+      <path class="tree-branch" d="M230,30 L230,110"/>
+      <path class="tree-branch" d="M230,30 L340,110"/>
+      <circle class="tree-node" cx="230" cy="26" r="16"/>
+      <text x="230" y="30" text-anchor="middle" class="tree-sub">common ancestor</text>
+      <text x="230" y="10" text-anchor="middle" class="tree-sub" font-style="italic">mechanosensing protein</text>
+
+      <circle class="tree-node" cx="120" cy="116" r="14"/>
+      <text x="120" y="120" text-anchor="middle" class="tree-sub">pitcher plant</text>
+      <text x="120" y="145" text-anchor="middle" class="tree-sub">lure + digest</text>
+
+      <circle class="tree-node" cx="230" cy="116" r="14"/>
+      <text x="230" y="120" text-anchor="middle" class="tree-sub">sundew</text>
+      <text x="230" y="145" text-anchor="middle" class="tree-sub">mechanosensing + digest</text>
+
+      <circle class="tree-node" cx="340" cy="116" r="14"/>
+      <text x="340" y="120" text-anchor="middle" class="tree-sub">Saxifraga</text>
+      <text x="340" y="145" text-anchor="middle" class="tree-sub">lure + assimilate</text>
+
+      <rect x="150" y="180" width="160" height="30" rx="15" fill="var(--amber)" opacity=".9"/>
+      <text x="230" y="199" text-anchor="middle" font-weight="700" fill="var(--navy-deep)" font-size="12">convergent trait: carnivory</text>
+      <path class="tree-branch" d="M120,130 L200,180" stroke-dasharray="3 3"/>
+      <path class="tree-branch" d="M230,130 L230,180" stroke-dasharray="3 3"/>
+      <path class="tree-branch" d="M340,130 L260,180" stroke-dasharray="3 3"/>
+    </svg>
+    <p style="font-size:.85rem;color:var(--shell-dim);">Each lineage emphasizes different adaptations — mechanosensing (a more sensitive trigger), luring prey, digesting it with enzymes, and assimilating the nutrients — but they converge on the same overall strategy. (Real research: carnivory has independently evolved in at least 14 families of flowering plants.)</p>
+  </div>
+</section>
+
+<!-- ================= SCIENCE IN ACTION ================= -->
+<section id="science" class="panel">
+  <div class="section-head">
+    <p class="kicker">From your reading assignment</p>
+    <h2>Proving a plant is carnivorous</h2>
+    <p class="lead">A clean, real example of the scientific method — and a nice tie-in to convergent evolution.</p>
+  </div>
+
+  <div class="paper">
+    <div class="sci-flow">
+      <div class="sci-step">Phenomenon (observation)</div><span class="sci-arrow">→</span>
+      <div class="sci-step">Scientific question</div><span class="sci-arrow">→</span>
+      <div class="sci-step">Hypothesis (testable explanation)</div>
+    </div>
+    <p>In 1875, Darwin studied alpine <em>Saxifraga</em> plants with sticky hairs and suspected they might be carnivorous — but couldn't prove it. 150 years later, researchers studying <em>Saxifraga candelabrum</em> (grows in nutrient-poor rock crevices on the Tibetan Plateau, covered in sticky glandular hairs) put Darwin's hypothesis to the test.</p>
+  </div>
+
+  <div class="paper">
+    <h3>To count as carnivorous, a plant must be shown to trap, digest, <em>and</em> absorb its prey</h3>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-num">1</div>
+        <h4>Trap</h4>
+        <p>Mesh and glass enclosures showed the plant's floral scent lures insects in — but its sticky hairs selectively caught only small insects, sparing the large pollinators that keep the plant's own reproduction going.</p>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">2</div>
+        <h4>Digest</h4>
+        <p>A chemical that fluoresces green in the presence of digestive enzymes was applied to the hairs — they glowed, confirming active digestion was happening.</p>
+      </div>
+      <div class="proof-card">
+        <div class="proof-num">3</div>
+        <h4>Absorb</h4>
+        <p>Flies were labeled with a nitrogen isotope and fed to the plant. Two weeks later, that same isotope turned up in the plant's own tissue — direct proof it absorbed nutrients from its prey.</p>
+      </div>
+    </div>
+    <p style="margin-top:14px;">This confirmed carnivory in a brand-new plant family (Saxifragaceae) — and hints that carnivory could be hiding in many more ordinary-looking sticky-leaved plants than scientists currently know about.</p>
+  </div>
+</section>
+
+<!-- ================= FLASHCARDS ================= -->
+<section id="flashcards" class="panel">
+  <div class="section-head">
+    <p class="kicker">Quick recall</p>
+    <h2>Flashcards</h2>
+    <p class="lead">Click a card to flip it. Filter by topic to focus your review.</p>
+  </div>
+  <div class="filter-row" id="filterRow"></div>
+  <div class="flash-grid" id="flashGrid"></div>
+</section>
+
+<!-- ================= QUIZ ================= -->
+<section id="quiz" class="panel">
+  <div class="section-head">
+    <p class="kicker">Test yourself</p>
+    <h2>Practice quiz</h2>
+    <p class="lead">15 questions across the whole unit. Instant feedback on each one.</p>
+  </div>
+  <div class="paper quiz-shell" id="quizShell"></div>
+</section>
+
+</main>
+
+<footer>Built from your own class notes and worksheets — good luck tomorrow, Annie.</footer>
+
+<script>
+/* ============ DATA ============ */
+const timelineData = [
+  {era:"Chemical evolution", title:"Big Bang & stars", text:"Stars fused hydrogen into heavier elements. Supernovae scattered CHNOPS — carbon, hydrogen, nitrogen, oxygen, phosphorus, sulfur — into space. These are the raw atoms every living thing is built from."},
+  {era:"Chemical evolution", title:"Small molecules", text:"Simple molecules formed: CH4, CO, CO2, NH3, SO4, H2O — ubiquitous across the early solar system. They arrived on Earth via asteroids/comets (e.g. the Murchison meteorite, asteroid Bennu) and formed in Earth's own early atmosphere and oceans."},
+  {era:"Chemical evolution", title:"Monomers", text:"Miller-Urey style chemistry built life's building blocks: monosaccharides, amino acids (20 kinds, linked by peptide bonds), nucleotides (A, T/U, G, C), and fatty acids. Clay surfaces and iron-sulfur minerals may have concentrated and catalyzed these reactions."},
+  {era:"Chemical evolution", title:"Polymers", text:"Monomers linked into polymers: carbohydrates, proteins, nucleic acids (DNA/RNA), phospholipids. Early metabolism began — possibly at the microscopic pores of hydrothermal vents."},
+  {era:"Chemical evolution", title:"Protobionts", text:"Coacervates, microspheres, and liposomes — 'before life' / 'life-like' structures with an organic membrane. They isolate and protect chemical reactions and concentrate molecules, but don't yet reproduce or carry heritable information."},
+  {era:"Organic evolution", title:"FLO", text:"First Living Organism. Possibly RNA-based — a ribozyme able to replicate and evolve. Had a membrane and an energy molecule. Possibly a chemoautotroph, making ATP from a proton gradient (PMF) the way chemosynthetic bacteria do at hydrothermal vents today."},
+  {era:"Organic evolution", title:"LUCA", text:"Last Universal Common Ancestor. DNA-based. Had a phospholipid bilayer membrane, used ATP, and stored genetic information in DNA — the same three traits every living cell on Earth shares today."},
+  {era:"Organic evolution", title:"Diversification", text:"LUCA's descendants split into Bacteria and Archaea (prokaryotes — no nucleus) and Eukaryotes (nucleus + organelles) — which include multicellular, sexually reproducing organisms like flowering plants."}
+];
+
+const flowerInfo = {
+  anther:{tag:"Stamen — male part", title:"Anther", text:"Produces pollen. Pollen contains the microspore (2n), which undergoes meiosis to become sperm (n)."},
+  filament:{tag:"Stamen — male part", title:"Filament", text:"The stalk that supports the anther, holding it up for pollination."},
+  stigma:{tag:"Pistil — female part", title:"Stigma", text:"The sticky tip where pollen lands and germinates. Special proteins let compatible pollen grow a tube toward the ovary."},
+  style:{tag:"Pistil — female part", title:"Style", text:"The tube that connects the stigma to the ovary — the passage the pollen tube grows down."},
+  ovary:{tag:"Pistil — female part", title:"Ovary (contains the ovule)", text:"Houses the ovule, which contains the megaspore (2n). Meiosis turns the megaspore into the egg (n). After fertilization, the ovary and its contents develop into the seed."}
+};
+
+const flashcardsData = [
+  {topic:"origin", term:"CHNOPS", def:"The six elements — carbon, hydrogen, nitrogen, oxygen, phosphorus, sulfur — that make up nearly all biological molecules."},
+  {topic:"origin", term:"Chemical evolution", def:"The stage before life existed, when nonliving chemistry built increasingly complex molecules: monomers → polymers → protobionts."},
+  {topic:"origin", term:"Organic evolution", def:"Evolution of living things by natural selection, beginning once FLO / LUCA existed."},
+  {topic:"origin", term:"Protobiont", def:"A 'before life' / 'life-like' structure (coacervate, microsphere, or liposome) with an organic membrane, but not yet truly alive."},
+  {topic:"origin", term:"FLO", def:"'First Living Organism' — possibly an RNA-based chemoautotroph, with a membrane and an energy molecule."},
+  {topic:"origin", term:"LUCA", def:"'Last Universal Common Ancestor' — the DNA-based ancestor of all life today, with a phospholipid membrane and ATP use."},
+  {topic:"origin", term:"Ribozyme", def:"An RNA molecule that acts as a catalyst (enzyme) — key evidence behind the RNA World hypothesis."},
+  {topic:"origin", term:"Chemiosmosis", def:"Using a proton gradient built up across a membrane to power ATP synthesis via ATP synthase."},
+  {topic:"origin", term:"Proton motive force (PMF)", def:"The potential energy stored in a proton gradient across a membrane."},
+  {topic:"origin", term:"Black smoker", def:"An extremely hot (350–700°C), acidic hydrothermal vent, rich in iron/nickel sulfides."},
+  {topic:"origin", term:"White smoker", def:"A cooler (~100–150°C), more alkaline hydrothermal vent with calcium carbonate walls and micropores where proton gradients form."},
+  {topic:"origin", term:"Miller-Urey experiment", def:"1953 experiment simulating early Earth's reducing atmosphere; produced amino acids and other organics from simple gases plus electric sparks."},
+  {topic:"origin", term:"Reducing atmosphere", def:"An oxygen-free atmosphere thought to describe early Earth — necessary for Miller-Urey style chemistry to work."},
+  {topic:"origin", term:"Spontaneous generation / vitalism", def:"The disproven idea that life arises from non-living matter via a mysterious 'life force'; disproven by Pasteur's swan-neck flask experiment."},
+  {topic:"origin", term:"Biogenesis", def:"Pasteur's conclusion: life only comes from existing life."},
+  {topic:"plants", term:"Stamen", def:"The male part of a flower — anther + filament."},
+  {topic:"plants", term:"Pistil", def:"The female part of a flower — stigma + style + ovary."},
+  {topic:"plants", term:"Anther", def:"Produces pollen, which contains the microspore."},
+  {topic:"plants", term:"Stigma", def:"The sticky tip of the pistil where pollen lands and germinates."},
+  {topic:"plants", term:"Ovule", def:"Structure inside the ovary containing the megaspore, which becomes the egg."},
+  {topic:"plants", term:"Meiosis", def:"A 'reduction division' that produces cells (sperm/egg) with half the normal number of chromosomes."},
+  {topic:"cells", term:"Prokaryote", def:"A cell with no nucleus and no membrane-bound organelles — 'before a nucleus.'"},
+  {topic:"cells", term:"Eukaryote", def:"A cell with a true, membrane-bound nucleus and organelles."},
+  {topic:"cells", term:"Organelle", def:"A membrane-bound structure inside a eukaryotic cell that carries out a specialized function."},
+  {topic:"evolution", term:"Natural selection", def:"Individuals with traits that help them survive and reproduce pass those traits on more often, shifting the population over time."},
+  {topic:"evolution", term:"Mutation", def:"A random change in DNA — the ultimate source of genetic variation (only heritable if it occurs in a sperm or egg cell)."},
+  {topic:"evolution", term:"Convergent evolution", def:"Unrelated species independently evolving similar traits because of similar environmental pressures, not shared ancestry."},
+  {topic:"evolution", term:"Chemoautotroph", def:"An organism that makes its own food using energy from inorganic chemical reactions (e.g. oxidizing H2S) rather than sunlight."}
+];
+
+const quizData = [
+  {q:"Which set of elements make up nearly all biological molecules?", options:["NPKCa","CHNOPS","CHOFe","NaClKMg"], correct:1, explain:"CHNOPS = carbon, hydrogen, nitrogen, oxygen, phosphorus, sulfur."},
+  {q:"What is a protobiont?", options:["A DNA-based ancestor of all life","A 'before life' structure with an organic membrane, not yet fully alive","A type of RNA enzyme","A hydrothermal vent mineral"], correct:1, explain:"Protobionts (coacervates, microspheres, liposomes) have some life-like traits but can't yet reliably reproduce or pass on heritable information."},
+  {q:"What powers ATP production in chemiosmosis?", options:["Sunlight absorbed directly by ATP","A proton gradient across a membrane, released through ATP synthase","Glucose broken down in the cytoplasm","DNA replication"], correct:1, explain:"Protons build up on one side of a membrane; letting them flow back through ATP synthase drives ATP synthesis."},
+  {q:"Which best describes LUCA?", options:["The first RNA-based ribozyme","The DNA-based ancestor shared by all life today, with a phospholipid membrane and ATP use","A type of coacervate","A hydrothermal vent mineral structure"], correct:1, explain:"LUCA — Last Universal Common Ancestor — was DNA-based, with a phospholipid bilayer and ATP use."},
+  {q:"In the Miller-Urey experiment, electric sparks simulated what?", options:["Volcanic heat","Lightning","Sunlight","Ocean currents"], correct:1, explain:"Sparks stood in for lightning, providing energy for reactions in the simulated early atmosphere."},
+  {q:"What did Pasteur's swan-neck flask experiment show?", options:["Life comes from a mysterious 'life force' in the air","Boiling always destroys the 'vital force'","Life only arises from existing life (biogenesis) — the broth stayed sterile because microbes couldn't reach it","Spontaneous generation is correct"], correct:2, explain:"The curved neck trapped microbes before they reached the broth; the broth stayed sterile even though it was open to air, disproving spontaneous generation."},
+  {q:"In a flower, where does pollen germinate and start growing a pollen tube?", options:["The ovary","The stigma","The filament","The megaspore"], correct:1, explain:"The stigma is the landing pad — its proteins let compatible pollen germinate and grow a tube toward the ovary."},
+  {q:"A human body cell has 46 chromosomes (2 x 23). How many does a sperm or egg cell have after meiosis?", options:["46","23","69","92"], correct:1, explain:"Meiosis is a reduction division — it halves the chromosome number, from 46 to 23."},
+  {q:"What does meiosis do?", options:["Copies a cell exactly","Produces cells with half the normal chromosome number","Produces new organelles","Fertilizes an egg"], correct:1, explain:"Meiosis is a reduction division that produces gametes (sperm/egg) with half the chromosome number."},
+  {q:"Which structures are found in ALL cells — both prokaryotic and eukaryotic?", options:["Nucleus, mitochondria, cell wall","Cell membrane, ribosomes, cytoplasm, DNA","Chloroplast, Golgi apparatus","Nucleolus, lysosome, vesicle"], correct:1, explain:"Every cell — prokaryote or eukaryote — has a cell membrane, ribosomes, cytoplasm, and DNA."},
+  {q:"What makes a eukaryotic cell different from a prokaryotic cell?", options:["Eukaryotic cells lack DNA","Eukaryotic cells have a true, membrane-bound nucleus and organelles","Only eukaryotic cells have ribosomes","Only prokaryotic cells have a cell membrane"], correct:1, explain:"'Eu' = true, 'karyon' = nucleus — eukaryotes have a real, membrane-bound nucleus plus other organelles."},
+  {q:"Why can a plant cell photosynthesize but an animal cell cannot?", options:["Plant cells have chloroplasts; animal cells do not","Animal cells lack ribosomes","Plant cells lack mitochondria","Animal cells have a cell wall that blocks light"], correct:0, explain:"Chloroplasts (found in plant cells, not animal cells) are where photosynthesis happens."},
+  {q:"What is the key idea behind natural selection?", options:["Individuals change their traits on purpose during their lifetime","Traits controlled by genes that improve survival/reproduction become more common in a population over time","Every mutation is passed on to the next generation","Evolution happens to a single organism, not a population"], correct:1, explain:"Selection acts on heritable traits; helpful traits become more common across generations. Evolution happens at the population level."},
+  {q:"What is convergent evolution?", options:["Two closely related species that look alike because of a recent shared ancestor","Unrelated species independently evolving similar traits because of similar environmental pressures","One species splitting into two identical species","A mutation that occurs in every generation"], correct:1, explain:"Convergent evolution produces similar traits in unrelated lineages facing similar pressures — like carnivory evolving independently in many plant families."},
+  {q:"In the Saxifraga candelabrum case study, which three things did scientists have to prove to confirm the plant is carnivorous?", options:["Photosynthesis, respiration, reproduction","Trap, digest, absorb prey","Flower, pollinate, seed","Mutate, select, adapt"], correct:1, explain:"Carnivory requires evidence of all three: trapping prey, digesting it, and absorbing its nutrients."}
+];
+
+const populationData = [
+  {label:"Gen. 1 — warm, more light", counts:[14,10], note:"Mixed population — some individuals use light more efficiently than others."},
+  {label:"Selection — colder, less light", counts:[6,18], note:"Colder, lower-light conditions favor efficient light use (differential reproduction)."},
+  {label:"Gen. 2 — warm returns", counts:[4,20], note:"The efficient-light-use trait is now common — this is evolution: a change in population traits over time."}
+];
+
+/* ============ TAB NAV ============ */
+document.getElementById('tabNav').addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  document.querySelectorAll('#tabNav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('main .panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(btn.dataset.tab).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+/* ============ TIMELINE ============ */
+const track = document.getElementById('timelineTrack');
+timelineData.forEach((d,i)=>{
+  const b = document.createElement('button');
+  b.className = 'stage' + (i===0?' active':'');
+  b.innerHTML = '<span class="dot">'+(i+1)+'</span><span class="label">'+d.title+'</span>';
+  b.addEventListener('click', ()=>setStage(i));
+  track.appendChild(b);
+});
+function setStage(i){
+  document.querySelectorAll('.stage').forEach((s,idx)=>s.classList.toggle('active', idx===i));
+  document.getElementById('timelineEra').textContent = timelineData[i].era;
+  document.getElementById('timelineTitle').textContent = timelineData[i].title;
+  document.getElementById('timelineText').textContent = timelineData[i].text;
+  document.getElementById('timelineProgress').style.width = (i/(timelineData.length-1))*100 + '%';
+}
+setStage(0);
+
+/* ============ FLOWER HOTSPOTS ============ */
+document.querySelectorAll('.hotspot').forEach(h=>{
+  h.addEventListener('click', ()=>{
+    document.querySelectorAll('.hotspot').forEach(o=>o.classList.remove('active'));
+    h.classList.add('active');
+    const info = flowerInfo[h.dataset.part];
+    document.getElementById('flowerInfoTag').textContent = info.tag;
+    document.getElementById('flowerInfoTitle').textContent = info.title;
+    document.getElementById('flowerInfoText').textContent = info.text;
+  });
+});
+
+/* ============ POLLEN TUBE TRACE ============ */
+const tubePath = document.getElementById('pollenTube');
+const tubeLen = tubePath.getTotalLength();
+tubePath.style.strokeDasharray = tubeLen;
+tubePath.style.strokeDashoffset = tubeLen;
+tubePath.style.transition = 'stroke-dashoffset 1.6s ease';
+let tracing = false;
+document.getElementById('traceBtn').addEventListener('click', function(){
+  tracing = !tracing;
+  tubePath.style.strokeDashoffset = tracing ? 0 : tubeLen;
+  this.textContent = tracing ? '⏸ Reset the tube' : '▶ Trace the pollen tube';
+});
+
+/* ============ MEIOSIS SPLIT ============ */
+document.getElementById('meiosisCell').addEventListener('click', function(){
+  this.classList.toggle('split');
+});
+
+/* ============ CHEMIOSMOSIS TOGGLE ============ */
+document.getElementById('chemToggle').addEventListener('click', function(){
+  const d = document.getElementById('chemDiagram');
+  d.classList.toggle('running');
+  this.textContent = d.classList.contains('running') ? '⏸ Pause proton flow' : '▶ Show proton flow';
+});
+
+/* ============ POPULATION DIAGRAM ============ */
+const popFlow = document.getElementById('popFlow');
+populationData.forEach((p,i)=>{
+  if(i>0){
+    const arrow = document.createElement('span');
+    arrow.className = 'pop-arrow';
+    arrow.textContent = '→';
+    popFlow.appendChild(arrow);
+  }
+  const panel = document.createElement('div');
+  panel.className = 'pop-panel';
+  let dots = '';
+  for(let j=0;j<p.counts[0];j++) dots += '<span style="background:var(--rose)"></span>';
+  for(let j=0;j<p.counts[1];j++) dots += '<span style="background:var(--teal-deep)"></span>';
+  panel.innerHTML = '<h4>'+p.label+'</h4><div class="pop-dots">'+dots+'</div><p>'+p.note+'</p>';
+  popFlow.appendChild(panel);
+});
+
+/* ============ FLASHCARDS ============ */
+const topicNames = {all:'All', origin:'Origin of life', plants:'Plant repro', cells:'Cells', evolution:'Evolution'};
+const filterRow = document.getElementById('filterRow');
+Object.keys(topicNames).forEach(key=>{
+  const b = document.createElement('button');
+  b.textContent = topicNames[key];
+  b.dataset.filter = key;
+  if(key==='all') b.classList.add('active');
+  b.addEventListener('click', ()=>{
+    document.querySelectorAll('#filterRow button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    renderFlashcards(key);
+  });
+  filterRow.appendChild(b);
+});
+function renderFlashcards(filter){
+  const grid = document.getElementById('flashGrid');
+  grid.innerHTML = '';
+  flashcardsData.filter(c=> filter==='all' || c.topic===filter).forEach(c=>{
+    const card = document.createElement('div');
+    card.className = 'flashcard';
+    card.innerHTML = '<div class="flashcard-inner">'+
+      '<div class="flash-face flash-front"><h4>'+c.term+'</h4><span class="hint">tap to flip</span></div>'+
+      '<div class="flash-face flash-back"><p style="margin:0;">'+c.def+'</p></div>'+
+    '</div>';
+    card.addEventListener('click', ()=>card.classList.toggle('flipped'));
+    grid.appendChild(card);
+  });
+}
+renderFlashcards('all');
+
+/* ============ QUIZ ============ */
+let qIndex = 0, qScore = 0, qAnswered = false;
+const quizShell = document.getElementById('quizShell');
+function renderQuiz(){
+  if(qIndex >= quizData.length){ renderResults(); return; }
+  const item = quizData[qIndex];
+  qAnswered = false;
+  quizShell.innerHTML =
+    '<div class="quiz-progress">Question '+(qIndex+1)+' of '+quizData.length+'</div>'+
+    '<div class="quiz-q">'+item.q+'</div>'+
+    '<div class="quiz-options">'+item.options.map((o,i)=>'<button class="quiz-opt" data-i="'+i+'">'+o+'</button>').join('')+'</div>'+
+    '<div class="quiz-explain" id="quizExplain"></div>'+
+    '<div class="quiz-footer"><span class="quiz-score">Score: '+qScore+' / '+quizData.length+'</span>'+
+    '<button class="btn secondary" id="quizNext" style="display:none;">Next question</button></div>';
+  quizShell.querySelectorAll('.quiz-opt').forEach(btn=>{
+    btn.addEventListener('click', function(){
+      if(qAnswered) return;
+      qAnswered = true;
+      const chosen = parseInt(this.dataset.i);
+      quizShell.querySelectorAll('.quiz-opt').forEach((b,i)=>{
+        b.disabled = true;
+        if(i===item.correct) b.classList.add('correct');
+        else if(i===chosen) b.classList.add('incorrect');
+      });
+      if(chosen===item.correct) qScore++;
+      const ex = document.getElementById('quizExplain');
+      ex.textContent = item.explain;
+      ex.classList.add('show');
+      document.querySelector('.quiz-score').textContent = 'Score: '+qScore+' / '+quizData.length;
+      document.getElementById('quizNext').style.display = 'inline-flex';
+    });
+  });
+  document.getElementById('quizNext').addEventListener('click', ()=>{ qIndex++; renderQuiz(); });
+}
+function renderResults(){
+  quizShell.innerHTML =
+    '<div class="quiz-result" style="text-align:center;">'+
+    '<p class="kicker" style="color:var(--teal-deep);">All done</p>'+
+    '<div class="big">'+qScore+' / '+quizData.length+'</div>'+
+    '<h3>'+(qScore===quizData.length ? "Perfect score." : qScore>=quizData.length*0.7 ? "Solid work." : "Worth another pass through the notes.")+'</h3>'+
+    '<button class="btn" id="quizRestart">Try again</button>'+
+    '</div>';
+  document.getElementById('quizRestart').addEventListener('click', ()=>{ qIndex=0; qScore=0; renderQuiz(); });
+}
+renderQuiz();
+</script>
+</body>
+</html>
