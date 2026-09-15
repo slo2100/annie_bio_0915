@@ -107,7 +107,7 @@ main{max-width:1080px;margin:0 auto;padding:28px 20px 80px;}
   padding:22px 24px;
   margin:18px 0;
 }
-.paper h3{font-size:1.2rem;margin-bottom:.5em;}
+.paper h3{font-size:1.2rem;margin-bottom:.5em;color:var(--ink);}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0;}
 .card{
   background:var(--panel);color:var(--ink);
@@ -206,7 +206,7 @@ svg.diagram{width:100%;height:auto;display:block;}
   width:24px;height:24px;border-radius:50%;background:var(--amber);color:var(--navy-deep);
   font-weight:700;font-size:.78rem;margin-bottom:8px;
 }
-.flow-step h4{font-size:.92rem;margin-bottom:.3em;}
+.flow-step h4{font-size:.92rem;margin-bottom:.3em;color:var(--ink);}
 .flow-step p{font-size:.84rem;color:var(--ink-soft);margin:0;}
 .flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--shell-dim);font-size:1.3rem;flex:0 0 auto;padding:0 2px;}
 
@@ -234,7 +234,7 @@ svg.diagram{width:100%;height:auto;display:block;}
 /* ===== Cell diagrams + table ===== */
 .cell-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px;}
 .cell-card{background:var(--panel);color:var(--ink);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:16px;}
-.cell-card h4{font-size:1rem;margin-bottom:6px;}
+.cell-card h4{font-size:1rem;margin-bottom:6px;color:var(--ink);}
 .cell-card ul{margin:8px 0 0;padding-left:18px;font-size:.84rem;color:var(--ink-soft);}
 table.compare{width:100%;border-collapse:collapse;margin-top:10px;font-size:.86rem;}
 table.compare th,table.compare td{border:1px solid var(--line);padding:8px 10px;text-align:center;}
@@ -246,7 +246,7 @@ table.compare .no{color:var(--ink-soft);opacity:.45;}
 /* ===== Population / evolution diagram ===== */
 .pop-flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;}
 .pop-panel{background:var(--panel);color:var(--ink);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:14px;flex:1 1 200px;}
-.pop-panel h4{font-size:.86rem;margin-bottom:6px;}
+.pop-panel h4{font-size:.86rem;margin-bottom:6px;color:var(--ink);}
 .pop-dots{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin:8px 0;}
 .pop-dots span{width:14px;height:14px;border-radius:50%;display:block;}
 .pop-panel p{font-size:.78rem;color:var(--ink-soft);margin:0;}
@@ -266,6 +266,7 @@ table.compare .no{color:var(--ink-soft);opacity:.45;}
 .proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:16px;}
 .proof-card{background:var(--panel);color:var(--ink);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:16px;text-align:left;}
 .proof-num{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--amber-deep);font-weight:700;}
+.proof-card h4{color:var(--ink);}
 
 /* ===== Flashcards ===== */
 .filter-row{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;}
@@ -287,6 +288,8 @@ table.compare .no{color:var(--ink-soft);opacity:.45;}
 .flash-front .hint{font-size:.7rem;color:var(--ink-soft);margin-top:8px;font-style:italic;}
 .flash-back{background:var(--teal-deep);color:#F2FBF8;transform:rotateY(180deg);font-size:.86rem;}
 .flash-face h4{font-size:1.02rem;margin:0 0 4px;}
+.flash-front h4{color:var(--ink);}
+.flash-back h4{color:#F2FBF8;}
 
 /* ===== Quiz ===== */
 .quiz-shell{max-width:640px;}
